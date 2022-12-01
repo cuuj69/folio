@@ -3,6 +3,27 @@
 Universal Typography
 ************************************************************************************/
 
+.mode {
+    float: left;
+}
+
+.change {
+    cursor: pointer;
+    font-size: xx-small;
+    border: 1px solid #555;
+    border-radius: 40%;
+    width: 20px;
+    text-align: center;
+    padding: 5px;
+    margin-right: 8px;
+    
+}
+
+.dark{
+    background-color: #222;
+    color: #e6e6e6;
+}
+
 body {
     font-family: 'Ubuntu', sans-serif;
     font-size: 13px;
