@@ -3,7 +3,7 @@
     error_reporting(E_ALL); ini_set('display_errors', 1);
     
     // Email settings.
-    $contact['email'] = 'jason@circa75.co';
+    $contact['email'] = 'mensahjefferson69@gmail.com';
 
     // Only process POST reqeusts.
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
