@@ -171,7 +171,9 @@ $(document).on('click', '.open', function() {
 
     // Project variables.
     var project = $(this).data('project');
-    var $screenshot = '<div class="media" style="background-image: url(\'assets/demo/'+project+'-full.jpg\');"></div>';
+    // Modified path from(demo to link) && modified tag-name from(-full to -pull) and filetype from(.jpg to .png)
+
+    var $screenshot = '<div class="media" style="background-image: url(\'assets/link/'+project+'-pull.jpg\'); background-size:cover;"></div>';
     var $title = $('#'+project+' .copy').contents('h2');
     var $text = $('#'+project+' .copy').contents('p');
 

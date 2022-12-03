@@ -44,7 +44,23 @@ The Header
 	}
 
 	#header .profile {
-		display: none;
+		display: block;
+
+		/* Effected these changes */
+		background-position: center center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	
+		border-radius: 100%;
+	
+		width: 120%;
+		height: 50px;
+	
+		float: left;
+	
+		margin-bottom: 12.5px;
+	
+		box-shadow: 0 5px 30px rgba(0, 0, 0, 0.25);
 	}
 }
 

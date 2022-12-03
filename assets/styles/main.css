@@ -20,8 +20,10 @@ Universal Typography
 }
 
 .dark{
-    background-color: #222;
-    color: #e6e6e6;
+    background-color: rgb(133, 129, 129);
+    color: rgb(26, 216, 165);
+    font-weight: bold;
+    background-image: none;
 }
 
 body {
@@ -29,6 +31,13 @@ body {
     font-size: 13px;
     font-weight: 300;
     line-height: 1.6;
+
+    background-image: url(/perfect_pictures/scene3.jpg);
+    /* background-repeat: no-repeat; */
+    /* background-size: contain; */
+   
+    
+     
 }
 
 body,
@@ -699,6 +708,7 @@ Contact
 
 #contact {
     padding-top: 93px;
+  
 }
 
 #contact .message.error,
@@ -715,3 +725,8 @@ Contact
 #contact .message.success {
     color: #00ab6b;
 }
+
+#contact-form {
+    font-weight: bolder;
+}
+
