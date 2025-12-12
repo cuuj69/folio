@@ -184,13 +184,13 @@ Projects
 	}
 
 	#project .content .copy {
-		width: 70%;
-
-		left: 30%;
+		width: 50% !important;
+		left: auto !important;
+		padding: 40px 40px 30px !important;
 	}
 
-	#project .content .screenshot .media {
-	    left: -20%;
+	#project .content .project-iframe-container {
+		width: 50% !important;
 	}
 }
 
@@ -208,13 +208,13 @@ Projects
 	}
 
 	#project .content .copy {
-		width: 80%;
-
-		left: 20%;
+		width: 50% !important;
+		left: auto !important;
+		padding: 30px 30px 20px !important;
 	}
 
-	#project .content .screenshot .media {
-	    left: -30%;
+	#project .content .project-iframe-container {
+		width: 50% !important;
 	}
 }
 

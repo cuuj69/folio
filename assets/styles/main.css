@@ -639,6 +639,15 @@ Projects
     border-color: #f3605f;
 }
 
+/* Content: Container for project modal content. */
+#project .content {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+}
+
 /***********************************************************************************
 Profile Modal
 ************************************************************************************/
@@ -882,30 +891,169 @@ Resume Modal
 
 #project .content .copy {
     width: 50%;
+    height: 100%;
+    min-width: 400px;
+    max-width: none;
+    
+    position: relative;
+    flex-shrink: 1;
+    flex-basis: 50%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
 
-    position: absolute;
-    top: 50%;
-    left: 50%;
-
-    transform: translateY(-50%);
-
-    padding: 0 100px;
+    padding: 60px 50px 40px;
+    overflow-y: auto;
+    overflow-x: visible;
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box;
+    
+    /* Reset any conflicting styles */
+    float: none !important;
+    left: auto !important;
+    margin: 0 !important;
 }
 
-/* Media: The full project screenshot. */
+#project .content .copy .row {
+    width: 100% !important;
+    float: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    min-width: 0 !important;
+}
 
-#project .content .screenshot .media {
-    background-position: 0 0;
-    background-size: 100%;
-    background-repeat: repeat;
-    
+#project .content .copy h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1a202c;
+    margin: 0 0 15px 0;
+    line-height: 1.2;
+    width: 100%;
+    min-width: 0;
+    float: none !important;
+    display: block !important;
+    clear: both !important;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+#project .content .copy .project-category-tag {
+    font-size: 12px;
+    color: #667eea;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 20px 0;
+    display: block !important;
+    width: 100% !important;
+    float: none !important;
+    clear: both !important;
+    min-width: 0;
+    word-wrap: break-word;
+}
+
+#project .content .copy p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #4a5568;
+    margin: 0 0 20px 0;
+    width: 100% !important;
+    min-width: 0;
+    max-width: 100% !important;
+    float: none !important;
+    display: block !important;
+    clear: both !important;
+    word-wrap: normal;
+    overflow-wrap: normal;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+}
+
+#project .content .copy p:last-child {
+    margin-bottom: 0;
+}
+
+#project .content .copy a {
+    color: #667eea;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+#project .content .copy a:hover {
+    color: #5568d3;
+}
+
+/* Project iframe container: The GitHub repository iframe on the left side. */
+
+#project .content .project-iframe-container {
     width: 50%;
     height: 100%;
+    flex-basis: 50%;
+    flex-shrink: 0;
+    flex-grow: 0;
+    
+    position: relative;
+    
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    overflow: hidden;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
 
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 100;
+#project .content .project-iframe-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    flex: 1;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    display: block;
+    min-height: 0;
+    background: #ffffff;
+}
+
+#project .content .project-iframe-container.project-actions-visible iframe {
+    height: calc(100% - 60px);
+}
+
+#project .content .project-iframe-container .project-actions {
+    padding: 0;
+    background: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease, padding 0.5s ease;
+    height: 0;
+    overflow: hidden;
+    margin: 0;
+}
+
+#project .content .project-iframe-container .project-actions.visible {
+    opacity: 1;
+    height: auto;
+    padding: 15px 20px;
+}
+
+#project .content .project-iframe-container .project-actions .button {
+    background-color: #404040;
+    color: rgba(255, 255, 255, 0.85);
+    padding: 8px 20px;
+    font-size: 12px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+#project .content .project-iframe-container .project-actions .button:hover {
+    color: #ffffff;
+    background-color: #505050;
 }
 
 /***********************************************************************************

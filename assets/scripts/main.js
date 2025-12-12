@@ -171,14 +171,54 @@ $(document).on('click', '.open', function() {
 
     // Project variables.
     var project = $(this).data('project');
-    // Modified path from(demo to link) && modified tag-name from(-full to -pull) and filetype from(.jpg to .png)
+    var $projectElement = $('#'+project);
+    
+    // Get GitHub URL from data attribute
+    var githubUrl = $projectElement.data('github');
+    
+    // Get project content
+    var $title = $('#'+project+' .copy').find('h2');
+    var $text = $('#'+project+' .copy').find('p');
 
-    var $screenshot = '<div class="media" style="background-image: url(\'assets/link/'+project+'-pull.jpg\'); background-size:cover;"></div>';
-    var $title = $('#'+project+' .copy').contents('h2');
-    var $text = $('#'+project+' .copy').contents('p');
-
-    $('#project .content .screenshot').empty().append($screenshot);
-    $('#project .content .copy').empty().append($title.clone()).append($text.clone());
+    // Update iframe with GitHub URL
+    if (githubUrl) {
+        // Convert GitHub URL to github1s.com format for iframe embedding
+        // github1s.com allows iframe embedding and provides a VS Code-like interface
+        var embedUrl = githubUrl.replace('https://github.com/', 'https://github1s.com/');
+        
+        // Set iframe source
+        var $iframe = $('#project-iframe');
+        $iframe.attr('src', embedUrl);
+        $('#project-github-link').attr('href', githubUrl);
+        
+        // Show iframe container
+        $iframe.show();
+        
+        // Hide the actions initially
+        $('#project .project-iframe-container .project-actions').removeClass('visible');
+        $('#project .project-iframe-container').removeClass('project-actions-visible');
+        
+        // Show the "View on GitHub" button after 3 seconds
+        setTimeout(function() {
+            $('#project .project-iframe-container .project-actions').addClass('visible');
+            $('#project .project-iframe-container').addClass('project-actions-visible');
+        }, 3000);
+    } else {
+        // If no GitHub URL, hide iframe
+        $('#project-iframe').hide();
+    }
+    
+    // Update copy section - clone all paragraphs including category tag
+    var $copySection = $('#project .content .copy');
+    $copySection.empty();
+    
+    // Clone and append all elements in order
+    $copySection.append($title.clone());
+    
+    // Get all paragraphs including the category tag
+    $('#'+project+' .copy p').each(function() {
+        $copySection.append($(this).clone());
+    });
 
     $(myelement).removeClass('fade-out-left closed').addClass('opened animated slow slide-in');
     
@@ -189,6 +229,13 @@ $(document).on('click', '.open', function() {
 $(document).ready(function() {
     function project_close(){
         var myelement = '#project';
+        
+        // Clear iframe src when closing
+        $('#project-iframe').attr('src', '');
+        
+        // Hide actions when closing
+        $('#project .project-iframe-container .project-actions').removeClass('visible');
+        $('#project .project-iframe-container').removeClass('project-actions-visible');
         
         $(myelement).removeClass('slide-in opened').addClass('animated fast fade-out-left');
 
