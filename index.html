@@ -39,7 +39,7 @@
 
         <!-- Header: Profile image and social links. -->
         <header class="pulldown animated slow fade-in" id="header">
-            <a href="https://www.linkedin.com/in/william-mensah-8b45371ab/"><div class="profile" style="background-image: url(assets/demo/William_Backend.jpg);">
+            <a href="#profile-modal" class="profile-link"><div class="profile" style="background-image: url(assets/demo/William_Backend.jpg);">
             </div></a>
             <!-- <a class="social twitter" href="#about" target="_blank"></a> -->
             <!-- <a class="social instagram" href="#about" target="_blank"></a> -->
@@ -48,20 +48,39 @@
             <!-- <a class="social " href="https://dribbble.com/jason" target="_blank"></a> -->
         </header>
 
+        <!-- Profile Image Modal -->
+        <section class="closed" id="profile-modal">
+            <a class="close" href="#profile-modal"></a>
+            <div class="content">
+                <div class="profile-image-container">
+                    <img src="assets/demo/William_Backend.jpg" alt="William Mensah" />
+                </div>
+            </div>
+        </section>
+
+        <!-- Resume Modal -->
+        <section class="closed" id="resume-modal">
+            <a class="close" href="#resume-modal"></a>
+            <div class="content">
+                <div class="resume-container">
+                    <iframe src="https://resume.wmensah.online" frameborder="0" allowfullscreen scrolling="yes"></iframe>
+                    <div class="resume-actions">
+                        <a href="https://resume.wmensah.online" target="_blank" class="button">Go to Page</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- About: A short intro about you. -->
         <section class="row intro" id="about">
             <div class="content">
                 <header class="row">
                     <nav>
                         <a class="about current scroll" href="#about">About</a>
-                        <!-- <a class="work scroll"    href="#work">Projects</a> -->
-                        <a class="work scroll"  href="#arrivals">under way</a>
+                        <a class="work scroll" href="#work">Projects</a>
                         <a class="contact scroll"  href="#contact">Contact</a>
                     </nav>
                 </header>
-
-                <div class="row media pullup" style="background-image: url(assets/demo/perfect2.png);">
-                </div>
 
                 <footer class="row">
                     <div class="row copy">
@@ -70,7 +89,7 @@
                     </div>
 
                     <div class="actions">
-                        <a class="button scroll" href="https://www.linkedin.com/in/william-mensah-8b45371ab/">RESUME</a><br><br>
+                        <a class="button resume-link" href="#resume-modal">RESUME</a><br><br>
                         <!-- <a class="button scroll" href="#contact">Quest</a> -->
                     </div>
                 </footer>
@@ -82,19 +101,110 @@
             <a href="https://github.com/cuuj69"><span class="title">Projects</span></a>
 
             <div class="content">
-                <article class="animated fade-up" id="work-jason">
-                    <div class="media" style="background-image: url(assets/link/work-jason-pull.jpg); background-size: contain;">
-                        <a class="open" href="#project" data-project="work-jason"><span>View This Project</span></a>
+                <!-- Libraries Category -->
+                <div class="project-category">
+                    <h3 class="category-title">Libraries</h3>
+                </div>
+                <article class="animated fade-up" id="work-fastyre">
+                    <div class="media library-bg">
+                        <a class="open" href="#project" data-project="work-fastyre"><span>View This Project</span></a>
                     </div>
 
                     <div class="row copy">
-                        <h2>
-                            Convert HTML content to PDF format with language translation capabilities</h2>
-                        <p> The HTML to PDF Translator is a versatile tool that allows you to convert HTML content to PDF documents while providing language translation capabilities using the LibreTranslate API. This application features a user-friendly GUI for ease of use. —  &amp;  You can view more information about this project on <a href="https://github.com/cuuj69/htmlPdf" target="_blank">HTML to PDF Translator</a>.</p>
+                        <h2>Fastyr AI Pipeline</h2>
+                        <p class="project-category-tag">Library</p>
+                        <p>A flexible Python library for building AI-powered conversational pipelines integrating Speech-to-Text (STT), Language Models (LLM), and Text-to-Speech (TTS) services. Built with FastAPI, async/await support, and provider-agnostic architecture. <a href="https://github.com/cuuj69/fastyr_ai_pipeline" target="_blank">View on GitHub</a>.</p>
                     </div>
                 </article>
 
-                <!--Another viable project needs to be inserted asap-->
+                <!-- Backend Services Category -->
+                <div class="project-category">
+                    <h3 class="category-title">Backend Services</h3>
+                </div>
+
+                <article class="animated fade-up" id="work-recommender">
+                    <div class="media backend-bg">
+                        <a class="open" href="#project" data-project="work-recommender"><span>View This Project</span></a>
+                    </div>
+
+                    <div class="row copy">
+                        <h2>Book Recommender API</h2>
+                        <p class="project-category-tag">Backend Service</p>
+                        <p>A hybrid book recommendation platform that combines Content-Based Filtering (CBF), Collaborative Filtering (CF), and Graph Neural Network (GNN) approaches to provide personalized book recommendations. <a href="https://github.com/cuuj69/recommender_backend" target="_blank">View on GitHub</a>.</p>
+                    </div>
+                </article>
+
+                <article class="animated fade-up" id="work-traqroute">
+                    <div class="media backend-bg">
+                        <a class="open" href="#project" data-project="work-traqroute"><span>View This Project</span></a>
+                    </div>
+
+                    <div class="row copy">
+                        <h2>TraqRoute</h2>
+                        <p class="project-category-tag">Backend Service</p>
+                        <p>A high-performance, scalable delivery route optimization system built with Java + Quarkus, implementing advanced algorithms for real-time driver assignment and route optimization. Features order management, intelligent driver matching, route optimization using Dijkstra's and A* algorithms, WebSocket-based live tracking, and dynamic re-routing. <a href="https://github.com/cuuj69/traqRoute" target="_blank">View on GitHub</a>.</p>
+                    </div>
+                </article>
+
+                <article class="animated fade-up" id="work-crudhr">
+                    <div class="media backend-bg">
+                        <a class="open" href="#project" data-project="work-crudhr"><span>View This Project</span></a>
+                    </div>
+
+                    <div class="row copy">
+                        <h2>Employee Management System</h2>
+                        <p class="project-category-tag">Backend Service</p>
+                        <p>Employee management system backend service for comprehensive HR operations and workforce management. <a href="https://github.com/cuuj69/crud_hr" target="_blank">View on GitHub</a>.</p>
+                    </div>
+                </article>
+
+                <article class="animated fade-up" id="work-grpc">
+                    <div class="media backend-bg">
+                        <a class="open" href="#project" data-project="work-grpc"><span>View This Project</span></a>
+                    </div>
+
+                    <div class="row copy">
+                        <h2>ASP.NET Core gRPC</h2>
+                        <p class="project-category-tag">Backend Service</p>
+                        <p>C# gRPC implementation in .NET Core demonstrating high-performance inter-service communication. Built with modern async/await patterns, protocol buffers, and efficient binary serialization for microservices architecture. <a href="https://github.com/cuuj69/ASP.NET-CORE-GrpcServer" target="_blank">View on GitHub</a>.</p>
+                    </div>
+                </article>
+
+                <!-- Utility Tools Category -->
+                <div class="project-category">
+                    <h3 class="category-title">Utility Tools</h3>
+                </div>
+
+                <article class="animated fade-up" id="work-opensearch">
+                    <div class="media tooling-bg">
+                        <a class="open" href="#project" data-project="work-opensearch"><span>View This Project</span></a>
+                    </div>
+
+                    <div class="row copy">
+                        <h2>OpenSearch Suite Backend</h2>
+                        <p class="project-category-tag">Utility Tool</p>
+                        <p>A production-grade NestJS backend with GraphQL and OpenSearch integration for advanced search and recommendation capabilities. <a href="https://github.com/cuuj69/open_search_suite" target="_blank">View on GitHub</a>.</p>
+                    </div>
+                </article>
+
+                <!-- Applications Category -->
+                <div class="project-category">
+                    <h3 class="category-title">Applications</h3>
+                </div>
+
+                <article class="animated fade-up" id="work-notepad">
+                    <div class="media tooling-bg">
+                        <a class="open" href="#project" data-project="work-notepad"><span>View This Project</span></a>
+                    </div>
+
+                    <div class="row copy">
+                        <h2>Cross-Platform Notepad</h2>
+                        <p class="project-category-tag">Application</p>
+                        <p>A seamless and versatile notepad application that empowers users to continue their work effortlessly across various devices and workspaces. Features cross-platform continuity and unlimited clipboard for enhanced productivity. <a href="https://github.com/cuuj69/notes--backend" target="_blank">View on GitHub</a>.</p>
+                    </div>
+                </article>
+
+
                 <!-- <article class="animated fade-up" id="work-episodes">
                     <div class="media" style="background-image: url(assets/link/work-episodes-pull.jpg);background-size: contain;" >
                         <a class="open" href="#project" data-project="work-episodes"><span>View This Project</span></a>

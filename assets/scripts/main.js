@@ -220,3 +220,114 @@ $( ".change" ).on("click" , function() {
         $( ".change").text( "ON");
     }
 });
+
+/***********************************************************************************
+Profile Modal Toggle
+************************************************************************************/
+
+// Open Profile Modal
+$(document).on('click', '.profile-link', function() {
+    var myelement = $(this).attr('href');
+    
+    $(myelement).removeClass('fade-out-left closed').addClass('opened animated slow fade-in');
+    
+    return false;
+});
+
+// Close Profile Modal
+$(document).ready(function() {
+    function profile_modal_close(){
+        var myelement = '#profile-modal';
+        
+        $(myelement).removeClass('slide-in opened').addClass('animated fast fade-out-left');
+
+        setTimeout(function(){  
+            $(myelement).addClass('closed');
+        }, 250);
+    }
+
+    $(document).on('click', '#profile-modal .close', function(e) {
+        e.stopPropagation();
+        profile_modal_close();
+        
+        return false;
+    });
+
+    // Close on background click
+    $(document).on('click', '#profile-modal', function(e) {
+        if ($(e.target).is('#profile-modal')) {
+            profile_modal_close();
+        }
+    });
+
+    // Close on ESC key
+    $(document).on('keydown', function(e) {
+        if (e.keyCode === 27 && $('#profile-modal').hasClass('opened')) {
+            profile_modal_close();
+        }
+    });
+});
+
+/***********************************************************************************
+Resume Modal Toggle
+************************************************************************************/
+
+// Open Resume Modal
+$(document).on('click', '.resume-link', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    var myelement = $(this).attr('href');
+    
+    $(myelement).removeClass('fade-out-left closed').addClass('opened animated slow fade-in');
+    
+    // Hide the actions initially
+    $('#resume-modal .resume-actions').removeClass('visible');
+    $('#resume-modal .resume-container').removeClass('actions-visible');
+    
+    // Show the "Open in New Tab" button after 3 seconds
+    setTimeout(function() {
+        $('#resume-modal .resume-actions').addClass('visible');
+        $('#resume-modal .resume-container').addClass('actions-visible');
+    }, 3000);
+    
+    return false;
+});
+
+// Close Resume Modal
+$(document).ready(function() {
+    function resume_modal_close(){
+        var myelement = '#resume-modal';
+        
+        // Hide actions when closing
+        $('#resume-modal .resume-actions').removeClass('visible');
+        $('#resume-modal .resume-container').removeClass('actions-visible');
+        
+        $(myelement).removeClass('slide-in opened').addClass('animated fast fade-out-left');
+
+        setTimeout(function(){  
+            $(myelement).addClass('closed');
+        }, 250);
+    }
+
+    $(document).on('click', '#resume-modal .close', function(e) {
+        e.stopPropagation();
+        resume_modal_close();
+        
+        return false;
+    });
+
+    // Close on background click
+    $(document).on('click', '#resume-modal', function(e) {
+        if ($(e.target).is('#resume-modal')) {
+            resume_modal_close();
+        }
+    });
+
+    // Close on ESC key
+    $(document).on('keydown', function(e) {
+        if (e.keyCode === 27 && $('#resume-modal').hasClass('opened')) {
+            resume_modal_close();
+        }
+    });
+});

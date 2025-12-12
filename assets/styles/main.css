@@ -230,7 +230,10 @@ Universal Content Containers
 /* Sections: Section titles & borders. */
 
 section .title {
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 8px 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 
     position: absolute;
     top: -20px;
@@ -451,29 +454,109 @@ Work
 /* Copy: The title and descreiption (faded). */
 
 #work .content article .copy {
-    height: 90px;
-
+    min-height: 140px;
     position: relative;
+    overflow: visible;
+    padding: 10px 0;
+    background: transparent;
+}
 
-    overflow: hidden;
+#work .content article .copy h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a202c;
+    margin-bottom: 5px;
+    line-height: 1.3;
+    background: transparent;
+    padding: 0;
+}
+
+#work .content article .copy p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #4a5568;
+    margin-bottom: 8px;
+    background: transparent;
 }
 
 #work .content article .copy:after {
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.0), rgba(255, 255, 255, 1.0));
+    display: none;
+}
 
+/***********************************************************************************
+Project Categories
+************************************************************************************/
+
+.project-category {
     width: 100%;
-    height: 100%;
+    float: left;
+    clear: both;
+    margin: 40px 0 20px;
+    padding: 0 20px;
+}
 
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 100;
+.project-category:first-child {
+    margin-top: 0;
+}
 
-    display: block;
+.category-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #404040;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
 
-    overflow: hidden;
+.project-category-tag {
+    font-size: 11px;
+    color: #667eea;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin: -8px 0 8px 0;
+    padding: 4px 8px;
+    background: rgba(102, 126, 234, 0.1);
+    border-radius: 4px;
+    display: inline-block;
+}
 
-    content: '';
+/* Uniform Project Images - Category-based backgrounds */
+.library-bg {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-image: 
+        linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect fill="%23ffffff" opacity="0.1" width="400" height="400"/><path d="M200 50 L250 150 L150 150 Z" fill="%23ffffff" opacity="0.2"/><circle cx="200" cy="200" r="50" fill="%23ffffff" opacity="0.1"/></svg>');
+}
+
+.backend-bg {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    background-image: 
+        linear-gradient(135deg, rgba(17, 153, 142, 0.9) 0%, rgba(56, 239, 125, 0.9) 100%),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect fill="%23ffffff" opacity="0.1" width="400" height="400"/><rect x="100" y="100" width="200" height="200" fill="%23ffffff" opacity="0.15"/><rect x="150" y="150" width="100" height="100" fill="%23ffffff" opacity="0.2"/></svg>');
+}
+
+.devops-bg {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    background-image: 
+        linear-gradient(135deg, rgba(240, 147, 251, 0.9) 0%, rgba(245, 87, 108, 0.9) 100%),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect fill="%23ffffff" opacity="0.1" width="400" height="400"/><circle cx="200" cy="200" r="80" fill="%23ffffff" opacity="0.15"/><circle cx="200" cy="200" r="40" fill="%23ffffff" opacity="0.2"/></svg>');
+}
+
+.tooling-bg {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    background-image: 
+        linear-gradient(135deg, rgba(250, 112, 154, 0.9) 0%, rgba(254, 225, 64, 0.9) 100%),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect fill="%23ffffff" opacity="0.1" width="400" height="400"/><path d="M100 200 L200 100 L300 200 L200 300 Z" fill="%23ffffff" opacity="0.15"/></svg>');
+}
+
+.mobile-bg {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    background-image: 
+        linear-gradient(135deg, rgba(79, 172, 254, 0.9) 0%, rgba(0, 242, 254, 0.9) 100%),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect fill="%23ffffff" opacity="0.1" width="400" height="400"/><rect x="150" y="50" width="100" height="300" rx="20" fill="%23ffffff" opacity="0.15"/><rect x="170" y="100" width="60" height="200" fill="%23ffffff" opacity="0.2"/></svg>');
 }
 
 /***********************************************************************************
@@ -554,6 +637,245 @@ Projects
 #project .close:hover:before,
 #project .close:hover:after {
     border-color: #f3605f;
+}
+
+/***********************************************************************************
+Profile Modal
+************************************************************************************/
+
+#profile-modal {
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+
+    width: 100%;
+    height: 100%;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 6000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#profile-modal.closed {
+    display: none;
+}
+
+#profile-modal.opened {
+    display: flex;
+}
+
+#profile-modal .close {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    z-index: 6100;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#profile-modal .close:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(90deg) scale(1.1);
+}
+
+#profile-modal .close:before,
+#profile-modal .close:after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 2px;
+}
+
+#profile-modal .close:before {
+    transform: rotate(45deg);
+}
+
+#profile-modal .close:after {
+    transform: rotate(-45deg);
+}
+
+#profile-modal .content {
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+}
+
+#profile-modal .profile-image-container {
+    width: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+#profile-modal .profile-image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.profile-link {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/***********************************************************************************
+Resume Modal
+************************************************************************************/
+
+#resume-modal {
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+
+    width: 100%;
+    height: 100%;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 6000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+}
+
+#resume-modal.closed {
+    display: none;
+}
+
+#resume-modal.opened {
+    display: flex;
+}
+
+#resume-modal .close {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    z-index: 6100;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#resume-modal .close:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(90deg) scale(1.1);
+}
+
+#resume-modal .close:before,
+#resume-modal .close:after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 2px;
+}
+
+#resume-modal .close:before {
+    transform: rotate(45deg);
+}
+
+#resume-modal .close:after {
+    transform: rotate(-45deg);
+}
+
+#resume-modal .content {
+    width: 95%;
+    max-width: 414px;
+    height: 90vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow-x: auto;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+#resume-modal .resume-container {
+    width: 414px;
+    min-width: 414px;
+    height: 100%;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+}
+
+#resume-modal .resume-container iframe {
+    width: 414px;
+    min-width: 414px;
+    height: 100%;
+    border: none;
+    flex: 1;
+    transition: height 0.5s ease;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    transform: scale(1);
+    transform-origin: top left;
+}
+
+#resume-modal .resume-container.actions-visible iframe {
+    height: calc(100% - 60px);
+}
+
+#resume-modal .resume-actions {
+    padding: 0;
+    background: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease, padding 0.5s ease;
+    height: 0;
+    overflow: hidden;
+    margin: 0;
+}
+
+#resume-modal .resume-actions.visible {
+    opacity: 1;
+    height: auto;
+    padding: 15px 20px;
+}
+
+#resume-modal .resume-actions .button {
+    background-color: #404040;
+    color: rgba(255, 255, 255, 0.85);
+    padding: 8px 20px;
+    font-size: 12px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+#resume-modal .resume-actions .button:hover {
+    color: #ffffff;
+    background-color: #505050;
 }
 
 /* Copy: The project copy. */
