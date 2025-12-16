@@ -132,6 +132,34 @@ About
 /***********************************************************************************
 Work
 ************************************************************************************/
+
+@media (max-width: 800px) {
+	.project-filter-container {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 10px;
+	}
+	
+	.project-filter {
+		width: 100%;
+		max-width: 300px;
+	}
+}
+
+@media (max-width: 480px) {
+	.project-filter-container {
+		padding: 0;
+	}
+	
+	.filter-label {
+		font-size: 12px;
+	}
+	
+	.project-filter {
+		width: 100%;
+		max-width: 100%;
+	}
+}
  
 @media (max-width: 1200px) {
 	#work .content article {

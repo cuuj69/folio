@@ -100,11 +100,22 @@
             <a href="#"><span class="title">Projects</span></a>
 
             <div class="content">
+                <!-- Project Filter -->
+                <div class="project-filter-container">
+                    <label for="project-filter" class="filter-label">Filter by Type:</label>
+                    <select id="project-filter" class="project-filter">
+                        <option value="all">All Projects</option>
+                        <option value="Library">Libraries</option>
+                        <option value="Backend Service">Backend Services</option>
+                        <option value="Utility Tool">Utility Tools</option>
+                        <option value="Application">Applications</option>
+                    </select>
+                </div>
                 <!-- Libraries Category -->
-                <div class="project-category">
+                <div class="project-category" data-category="Library">
                     <h3 class="category-title">Libraries</h3>
                 </div>
-                <article class="animated fade-up" id="work-fastyre" data-github="https://github.com/cuuj69/fastyr_ai_pipeline">
+                <article class="animated fade-up" id="work-fastyre" data-github="https://github.com/cuuj69/fastyr_ai_pipeline" data-category="Library">
                     <div class="media library-bg">
                         <a class="open" href="#project" data-project="work-fastyre"><span>View This Project</span></a>
                     </div>
@@ -117,11 +128,11 @@
                 </article>
 
                 <!-- Backend Services Category -->
-                <div class="project-category">
+                <div class="project-category" data-category="Backend Service">
                     <h3 class="category-title">Backend Services</h3>
                 </div>
 
-                <article class="animated fade-up" id="work-recommender" data-github="https://github.com/cuuj69/recommender_backend">
+                <article class="animated fade-up" id="work-recommender" data-github="https://github.com/cuuj69/recommender_backend" data-category="Backend Service">
                     <div class="media backend-bg">
                         <a class="open" href="#project" data-project="work-recommender"><span>View This Project</span></a>
                     </div>
@@ -133,7 +144,7 @@
                     </div>
                 </article>
 
-                <article class="animated fade-up" id="work-traqroute" data-github="https://github.com/cuuj69/traqRoute">
+                <article class="animated fade-up" id="work-traqroute" data-github="https://github.com/cuuj69/traqRoute" data-category="Backend Service">
                     <div class="media backend-bg">
                         <a class="open" href="#project" data-project="work-traqroute"><span>View This Project</span></a>
                     </div>
@@ -145,7 +156,7 @@
                     </div>
                 </article>
 
-                <article class="animated fade-up" id="work-crudhr" data-github="https://github.com/cuuj69/crud_hr">
+                <article class="animated fade-up" id="work-crudhr" data-github="https://github.com/cuuj69/crud_hr" data-category="Backend Service">
                     <div class="media backend-bg">
                         <a class="open" href="#project" data-project="work-crudhr"><span>View This Project</span></a>
                     </div>
@@ -157,7 +168,7 @@
                     </div>
                 </article>
 
-                <article class="animated fade-up" id="work-grpc" data-github="https://github.com/cuuj69/ASP.NET-CORE-GrpcServer">
+                <article class="animated fade-up" id="work-grpc" data-github="https://github.com/cuuj69/ASP.NET-CORE-GrpcServer" data-category="Backend Service">
                     <div class="media backend-bg">
                         <a class="open" href="#project" data-project="work-grpc"><span>View This Project</span></a>
                     </div>
@@ -170,11 +181,11 @@
                 </article>
 
                 <!-- Utility Tools Category -->
-                <div class="project-category">
+                <div class="project-category" data-category="Utility Tool">
                     <h3 class="category-title">Utility Tools</h3>
                 </div>
 
-                <article class="animated fade-up" id="work-opensearch" data-github="https://github.com/cuuj69/open_search_suite">
+                <article class="animated fade-up" id="work-opensearch" data-github="https://github.com/cuuj69/open_search_suite" data-category="Utility Tool">
                     <div class="media tooling-bg">
                         <a class="open" href="#project" data-project="work-opensearch"><span>View This Project</span></a>
                     </div>
@@ -187,11 +198,11 @@
                 </article>
 
                 <!-- Applications Category -->
-                <div class="project-category">
+                <div class="project-category" data-category="Application">
                     <h3 class="category-title">Applications</h3>
                 </div>
 
-                <article class="animated fade-up" id="work-notepad" data-github="https://github.com/cuuj69/notes--backend">
+                <article class="animated fade-up" id="work-notepad" data-github="https://github.com/cuuj69/notes--backend" data-category="Application">
                     <div class="media tooling-bg">
                         <a class="open" href="#project" data-project="work-notepad"><span>View This Project</span></a>
                     </div>

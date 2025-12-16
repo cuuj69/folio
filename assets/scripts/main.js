@@ -378,3 +378,31 @@ $(document).ready(function() {
         }
     });
 });
+
+/***********************************************************************************
+Project Filter
+************************************************************************************/
+
+$(document).ready(function() {
+    $('#project-filter').on('change', function() {
+        var selectedCategory = $(this).val();
+        var $articles = $('#work .content article');
+        var $categories = $('#work .content .project-category');
+        
+        if (selectedCategory === 'all') {
+            // Show all projects and categories
+            $articles.fadeIn(300);
+            $categories.fadeIn(300);
+        } else {
+            // Hide all first
+            $articles.hide();
+            $categories.hide();
+            
+            // Show matching category header
+            $categories.filter('[data-category="' + selectedCategory + '"]').fadeIn(300);
+            
+            // Show matching articles
+            $articles.filter('[data-category="' + selectedCategory + '"]').fadeIn(300);
+        }
+    });
+});
